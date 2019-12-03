@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+<form id="frm" action="/analysis" method="post">
+  <input id="vod_input" type="text" name="vod" value=""> <!--name 반드시 입력!-->
+  <button id="btn" type="button" onclick="sendRequest()">요청</button>
+</form>
+
+  <p id="vod"></p>
+  <p id="info">{{info}}</p>
+  <p id="state"></p>
+  <p id="progress"></p>
+
+  <script src="{{ url_for('static', filename='js/request.js') }}"></script>
+</body>

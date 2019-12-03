@@ -1,0 +1,24 @@
+<!-- Code from d3-graph-gallery.com -->
+<!DOCTYPE html>
+
+<head>
+</head>
+
+<body>
+  <iframe id="vod_frame" src="https://player.twitch.tv/?autoplay=true&t=00h00m00s&video=v{{vod}}" frameborder="0"
+    allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+  <p>
+    <label>간격:</label>
+    <input type="number" min="10" max="600" step="10" value="60" id="interval" />
+    초
+  </p>
+
+  <!--data from server-->
+  <span id="vod" data-num={{vod}}></span>
+
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="{{ url_for('static', filename='js/d3_hist.js') }}"></script>
+  <script>
+    drawHist(document.getElementById('vod').dataset.num)
+  </script>
+</body>
